@@ -1,0 +1,345 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 9,
+    "passes": 6,
+    "pending": 0,
+    "failures": 3,
+    "start": "2021-09-21T10:38:03.076Z",
+    "end": "2021-09-21T10:38:11.368Z",
+    "duration": 8292,
+    "testsRegistered": 9,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0b694683-a4b4-42fe-8558-fbbc9cd8c5c3",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c6c7c8b-b620-4d5a-bb08-e33a8a85b6d7",
+          "title": "post for getting the token",
+          "fullFile": "C:\\Users\\gemy\\task-mes\\test\\Task.js",
+          "file": "\\test\\Task.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Post/first/name/for/token",
+              "fullTitle": "post for getting the token Post/first/name/for/token",
+              "timedOut": true,
+              "duration": 2033,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n    firstname: 'gamalxs'\n}\nreturn request\n    .post('/register')\n    .send(data)\n    .then((res) => {\n        let val = data.firstname.length;\n        console.log(val);\n        expect(val).to.be.lessThan(20).and.to.be.at.least(1);\n        console.log(res.body);\n    });",
+              "err": {
+                "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\gemy\\task-mes\\test\\Task.js)",
+                "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\gemy\\task-mes\\test\\Task.js)\n    at listOnTimeout (internal/timers.js:557:17)\n    at processTimers (internal/timers.js:500:7)",
+                "diff": null
+              },
+              "uuid": "a423f306-ff5a-4c7b-b691-d40dd8227bdd",
+              "parentUUID": "3c6c7c8b-b620-4d5a-bb08-e33a8a85b6d7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a423f306-ff5a-4c7b-b691-d40dd8227bdd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2033,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2259c657-31d4-41b6-ad5a-71f95293690a",
+          "title": "Register",
+          "fullFile": "C:\\Users\\gemy\\task-mes\\test\\Task.js",
+          "file": "\\test\\Task.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+              "title": "Valid Register",
+              "fullFile": "C:\\Users\\gemy\\task-mes\\test\\Task.js",
+              "file": "\\test\\Task.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Valid /FirstName",
+                  "fullTitle": "Register Valid Register Valid /FirstName",
+                  "timedOut": true,
+                  "duration": 2014,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data = {\n    firstname: 'Gamal',\n}\nreturn request\n    .post('/register')\n    // .set(\"Authrization\", `Bearer${token}`)\n    .send(data)\n    .then((res) => {\n        let val = data.firstname.length;\n        console.log(val);\n        expect(val).to.be.lessThan(20).and.to.be.at.least(1);//asserting the entered data is not more than 20 degit or less than one digit\n        console.log(res.body);\n    });",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\gemy\\task-mes\\test\\Task.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\gemy\\task-mes\\test\\Task.js)\n    at listOnTimeout (internal/timers.js:557:17)\n    at processTimers (internal/timers.js:500:7)",
+                    "diff": null
+                  },
+                  "uuid": "1916d3f8-029a-45cb-b477-5655fc1062f7",
+                  "parentUUID": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Entering email adress",
+                  "fullTitle": "Register Valid Register Entering email adress",
+                  "timedOut": false,
+                  "duration": 930,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data = {\n    email: `Whateve@you.com`\n};\nreturn request\n    .put('/register/1')\n    .send(data)\n    .then(() => {\n        let emailval = data.email.length;\n        console.log(emailval);\n        expect(emailval).to.be.lessThan(100).and.to.be.at.least(5, \"email is not right\");//asserting the entered data is not more than 100 degit or less than 5 digit\n        console.log(data);\n    });",
+                  "err": {},
+                  "uuid": "70f22d98-a178-4645-b791-fc896c0b111e",
+                  "parentUUID": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "entering countryCode & mobile",
+                  "fullTitle": "Register Valid Register entering countryCode & mobile",
+                  "timedOut": false,
+                  "duration": 547,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data = {\n    countryCode: '+02',\n    mobile: `01159530302`,\n};\nreturn request\n    .put('/register/1')\n    .send(data)\n    .then(() => {\n        let mobileval = data.mobile.length;\n        let allval = data.countryCode + data.mobile\n        // expect(data.mobile).to.be.a(`number`);\n        expect(allval).to.match(/^\\+(?:[0-9] ?){8,15}[0-9]$/); //asseting mobile phone number and the country code to be valid usin regx\n        expect(mobileval).to.be.lessThan(15).and.to.be.at.least(8);//asserting the entered data is not more than 15 degit or less than 8 digit\n        console.log(data);\n    });",
+                  "err": {},
+                  "uuid": "cb76f4e2-6fee-47cb-9878-3e094412c238",
+                  "parentUUID": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Password&confrimPassword",
+                  "fullTitle": "Register Valid Register Password&confrimPassword",
+                  "timedOut": false,
+                  "duration": 617,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data = {\n    password: `Gamal@0123`,\n    confirmpassword: `Gamal@0123`\n}\nreturn request\n    .put('/register/1')\n    .send(data)\n    .then((res) => {\n        let passval = data.password.length;\n        expect(data.password).to.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/);//asserting the password validation as requirments (at least one number / one special char / one lower digit /  one upper digit and 8chars a t least )\n        expect(passval).to.be.at.least(8);//asserting the entered data is not less than 8 digits\n        expect(data.password).to.be.eq(data.confirmpassword); // asserting the password is the same as confirm password\n    });",
+                  "err": {},
+                  "uuid": "8e430c76-8663-4b7e-898b-f1d89661b31b",
+                  "parentUUID": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "valid LastName",
+                  "fullTitle": "Register Valid Register valid LastName",
+                  "timedOut": false,
+                  "duration": 675,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data = {\n    LastName: `Mohamed`\n}\nreturn request\n    .put(`/register/1`)\n    .send(data)\n    .then(() => {\n        let Lastval = data.LastName.length;\n        expect(Lastval).be.lessThan(20).and.to.be.at.least(1);\n        console.log(data);\n    });",
+                  "err": {},
+                  "uuid": "288ba6d9-115e-4620-8104-ce4d9c076ea4",
+                  "parentUUID": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Get users",
+                  "fullTitle": "Register Valid Register Get users",
+                  "timedOut": false,
+                  "duration": 856,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/register/1').end((err, res) =>\n//?access=token=token')//\n{\n    expect(res.body).to.not.be.empty;\n    console.log(err);\n    console.log(\"register/1\");\n    done();\n});",
+                  "err": {},
+                  "uuid": "f2f5d63f-9d8d-4ef3-ba2f-a0267b1d4166",
+                  "parentUUID": "a1dd46c1-f329-4c09-9c16-9dd991927589",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [
+                {
+                  "uuid": "fc5bd2d2-0ad2-419f-9461-ec41d24ee62e",
+                  "title": "invalid login",
+                  "fullFile": "C:\\Users\\gemy\\task-mes\\test\\Task.js",
+                  "file": "\\test\\Task.js",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Invalid /register /data",
+                      "fullTitle": "Register Valid Register invalid login Invalid /register /data",
+                      "timedOut": false,
+                      "duration": 83,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const data = {\n    //if i added all data blank it's invalid\n    firstname: '', email: ``, countryCode: ``, mobile: ``, password: ``, confirmpassword: `inv`, LastName: ``\n}\nreturn request\n    .post('register')\n    // .set(\"Authrization\", `Bearer${token}`)\n    .send(data)\n    .then((done) => {\n        let val = data.firstname.length;\n        console.log(val);\n        expect(val).to.be.lessThan(20).and.to.be.at.least(1);\n        let emailval = data.email.length;\n        expect(emailval).to.be.lessThan(100).and.to.be.at.least(5, \"email is not right\");\n        let mobileval = data.mobile.length;\n        let allval = data.countryCode + data.mobile\n        expect(allval).to.match(/^\\+(?:[0-9] ?){8,15}[0-9]$/);\n        expect(mobileval).to.be.lessThan(15).and.to.be.at.least(8);\n        let passval = data.password.length;\n        expect(data.password).to.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{1,}$/);\n        expect(passval).to.be.lessThan(20).and.to.be.at.least(1);\n        expect(data.password).to.be.eq(data.confirmpassword);\n        let Lastval = data.LastName.length;\n        expect(Lastval).be.lessThan(20).and.to.be.at.least(1);\n        done();\n    });",
+                      "err": {
+                        "message": "Error: getaddrinfo ENOTFOUND 60b638878ac0790017829a0f.mockapi.ioregister",
+                        "estack": "Error: getaddrinfo ENOTFOUND 60b638878ac0790017829a0f.mockapi.ioregister\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:69:26)",
+                        "diff": null
+                      },
+                      "uuid": "c9e5ad42-7a8a-419e-90f8-93d021e54833",
+                      "parentUUID": "fc5bd2d2-0ad2-419f-9461-ec41d24ee62e",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [
+                    "c9e5ad42-7a8a-419e-90f8-93d021e54833"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 83,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "0d88d7d4-489c-4384-8400-987b7a0340dd",
+                  "title": "Task2",
+                  "fullFile": "C:\\Users\\gemy\\task-mes\\test\\Task.js",
+                  "file": "\\test\\Task.js",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Change Password",
+                      "fullTitle": "Register Valid Register Task2 Change Password",
+                      "timedOut": false,
+                      "duration": 509,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const data = {\n    password: `Gamal@010203`,\n    newPassword: `New@pass123`,\n    confirmNewPassword: `New@pass123`\n}\nreturn request\n    .post(`/changePassword`)\n    // .set(token)\n    .send({ data })\n    .set(\"Authorization\", `Bearer ${token}`)\n    .then((res) => {\n        let NewPassval = data.newPassword.length;\n        expect(data.newPassword).to.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{1,}$/);\n        expect(NewPassval).to.be.lessThan(20).and.to.be.at.least(1);\n        expect(data.newPassword).to.be.eq(data.confirmNewPassword);\n        console.log(res.body);\n    })",
+                      "err": {},
+                      "uuid": "52d5d098-6902-4618-b169-8d2e502a423b",
+                      "parentUUID": "0d88d7d4-489c-4384-8400-987b7a0340dd",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "52d5d098-6902-4618-b169-8d2e502a423b"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 509,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [
+                "70f22d98-a178-4645-b791-fc896c0b111e",
+                "cb76f4e2-6fee-47cb-9878-3e094412c238",
+                "8e430c76-8663-4b7e-898b-f1d89661b31b",
+                "288ba6d9-115e-4620-8104-ce4d9c076ea4",
+                "f2f5d63f-9d8d-4ef3-ba2f-a0267b1d4166"
+              ],
+              "failures": [
+                "1916d3f8-029a-45cb-b477-5655fc1062f7"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 5639,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "task-mes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "mochawesome": "^6.2.2",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "country-code-lookup": "0.0.19",
+    "libphonenumber-js": "^1.9.34"
+  }
+}
